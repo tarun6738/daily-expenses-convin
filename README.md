@@ -102,7 +102,7 @@ npm start
   "description": "string",
   "amount": "number",
   "splitType": "string",
-  "participants": ["string"]
+  "participants": Array
   }
 - Example json data
   ```json
