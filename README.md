@@ -137,7 +137,7 @@ npm start
 - **Description:** This endpoint retrieves all expenses for all users. The user must be logged in.
 
 
-### 3. Download Balance Sheet
+### 4. Download Balance Sheet
 - **Endpoint:** `/api/v1/expenses/download`
 - **Method:** `GET`
 - **Description:** This endpoint allows a logged-in user to download their balance sheet in CSV format
