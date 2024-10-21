@@ -49,5 +49,99 @@ npm start
 ```
 
 
+## User Routes
+
+### 1. Register User
+- **Endpoint:** `/api/v1/user/register`
+- **Method:** `POST`
+- **Description:** This endpoint allows a new user to register in the application.
+- **Request Body:**
+  ```json
+  {
+    "name": "string",
+    "email": "string",
+    "password": "string",
+    "mobile": "string"
+  }
+
+### 2. Login User
+- **Endpoint:** `/api/v1/user/login`
+- **Method:** `POST`
+- **Description:** This endpoint allows a user to login in the application.
+- **Request Body:**
+  ```json
+  {
+    "email": "string",
+    "password": "string",
+  }
+
+### 3. Logout User
+- **Endpoint:** `/api/v1/user/logout`
+- **Method:** `GET`
+- **Description:** This endpoint allows a user to logout from the application.
+
+### 4. Get User Details by ID
+- **Endpoint:** `/api/v1/user/:id`
+- **Method:** `GET`
+- **Description:** This endpoint retrieves the details of a single user by their ID.
+- **Parameters:** `id`: The unique identifier of the user.
+
+
+
+
+## Expense Routes
+
+
+### 1. Add Expense
+- **Endpoint:** `/api/v1/expenses/add`
+- **Method:** `POST`
+- **Description:**  This endpoint allows a logged-in user to add a new expense.
+- **Request Body:**
+  ```json
+  {
+  "description": "string",
+  "amount": "number",
+  "splitType": "string",
+  "participants": ["string"]
+  }
+- Example json data
+  ```json
+  {
+  "description": "Dinner at the restaurant",
+  "amount": 3000,
+  "splitType": "equal",
+  "participants": [
+    {
+      "user": 67150b34159621d2cbf808c0,
+    },
+    {
+      "user": 6715168ab99b6ec12ca35583,
+    },
+    {
+      "user": 671516a9b99b6ec12ca35587
+    }
+  ]
+  }
+
+
+### 2. Get Expenses by User ID
+- **Endpoint:** `/api/v1/expenses/get/:userId`
+- **Method:** `GET`
+- **Description:** This endpoint retrieves all expenses for a particular user by their user ID. The user must be logged in.
+- **Parameters:** `userId`: The unique identifier of the user.
+
+
+### 3. Get All Expenses
+- **Endpoint:** `/api/v1/expenses/all`
+- **Method:** `GET`
+- **Description:** This endpoint retrieves all expenses for all users. The user must be logged in.
+
+
+### 3. Download Balance Sheet
+- **Endpoint:** `/api/v1/expenses/download`
+- **Method:** `GET`
+- **Description:** This endpoint allows a logged-in user to download their balance sheet in CSV format
+
+
 
 
